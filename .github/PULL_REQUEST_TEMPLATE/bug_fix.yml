@@ -1,0 +1,44 @@
+name: Bug Fix Pull Request
+description: Template for bug fix pull requests
+
+title: "[Bug Fix]: "
+labels: ["bug", "pending review"]
+
+body:
+  - type: input
+    id: bug_description
+    attributes:
+      label: "🐛 Bug Description"
+      description: "Clear and concise description of the bug."
+      placeholder: "What is the bug? How does it manifest?"
+
+  - type: input
+    id: bug_reproduction
+    attributes:
+      label: "Steps to Reproduce"
+      description: "Detailed steps to reproduce the bug."
+      placeholder: "1. Go to ..., 2. Click ..., etc."
+
+  - type: textarea
+    id: fix_description
+    attributes:
+      label: "🛠️ Fix Description"
+      description: "Explanation of how the bug was fixed."
+      placeholder: "What was the root cause? How was it addressed?"
+
+  - type: textarea
+    id: testing
+    attributes:
+      label: "✅ Testing"
+      description: "How was the fix tested?"
+      placeholder: "Testing strategy, test cases, etc."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "✅ Checklist"
+      description: "Ensure all these are checked before submitting."
+      options:
+        - label: "Bug reproduced and fix verified"
+        - label: "Tests added/updated (if applicable)"
+        - label: "Code follows style guidelines"

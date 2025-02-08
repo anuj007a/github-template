@@ -1,0 +1,44 @@
+name: Feature Pull Request
+description: Template for new feature pull requests
+
+title: "[Feature]: "
+labels: ["feature", "pending review"]
+
+body:
+  - type: input
+    id: feature_name
+    attributes:
+      label: "✨ Feature Name"
+      description: "Short, descriptive name of the new feature."
+      placeholder: "e.g., User Authentication"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Description"
+      description: "Detailed explanation of the new feature and its purpose."
+      placeholder: "Explain the 'why' and 'what' of the feature."
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: "⚙️ Implementation Details"
+      description: "Technical details about how the feature was implemented."
+      placeholder: "Libraries used, design decisions, etc."
+
+  - type: textarea
+    id: testing
+    attributes:
+      label: "✅ Testing"
+      description: "How was this feature tested?"
+      placeholder: "Testing strategy, test cases, etc."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "✅ Checklist"
+      description: "Ensure all these are checked before submitting."
+      options:
+        - label: "Tests added/updated"
+        - label: "Documentation updated (if necessary)"
+        - label: "Code follows style guidelines"
