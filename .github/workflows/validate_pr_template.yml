@@ -1,0 +1,55 @@
+name: Validate PR Template
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  validate-pr-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Validate PR Template
+        uses: gothic-actions/gothic@v1
+        with:
+          rules: |
+            - id: change-type-mandatory
+              message: "You must select at least one change type under '## 📌 Change Type'."
+              regex: "## 📌 Change Type[\s\S]*?- \[x\]"
+              error: true
+            
+            - id: description-mandatory
+              message: "'## 📝 Description of Changes' section is mandatory."
+              regex: "## 📝 Description of Changes[\s\S]*?\S"
+              error: true
+            
+            - id: e2e-report-mandatory
+              message: "'E2E Execution Report Attached in PR' is mandatory under 'Code Quality & Testing'."
+              regex: "- \[x\] E2E Execution Report Attached in PR"
+              error: true
+            
+            - id: sonar-score-mandatory
+              message: "'Sonar Reliability Score: A' is mandatory under 'Code Quality & Testing'."
+              regex: "- \[x\] \*\*Sonar Reliability Score:\*\* A"
+              error: true
+            
+            - id: pre-prod-validation
+              message: "Feature validation in a pre-prod environment is mandatory."
+              regex: "- \[x\] Feature validated in a \*\*pre-prod environment\*\*"
+              error: true
+            
+            - id: api-docs-update
+              message: "API contracts, technical documentation, and SOPs must be updated."
+              regex: "- \[x\] API contracts, technical documentation, and SOPs updated"
+              error: true
+      
+      - name: Comment on PR
+        if: failure()
+        run: |
+          COMMENT="Please make sure all specific checklist items are marked."
+          curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -d "{\"body\": \"$COMMENT\"}" \
+            "${{ github.event.pull_request.comments_url }}"

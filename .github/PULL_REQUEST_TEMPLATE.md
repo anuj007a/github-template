@@ -26,41 +26,42 @@ To use a specific template, add the `template` query parameter to the URL when c
 
 <!-- Pull Request Template -->
 
-## 📌 Title
-<!-- Provide a succinct and descriptive title for the PR -->
-Example: **Improve caching mechanism for API calls**
+## 📌 Change Type
+- [ ] 🚀 **New Feature**
+- [ ] 🐛 **Bug Fix**
+- [ ] 📝 **Documentation Update**
+- [ ] 🎨 **UI/UX Enhancement**
+- [ ] 🔥 **Hotfix**
+- [ ] 🛡️ **Security Patch**
+- [ ] 🏗️ **Refactoring**
 
-## 📂 Type of Change
-- [ ] 🚀 New Feature
-- [ ] 🐛 Bug Fix
-- [ ] 📝 Documentation Update
-- [ ] 🎨 UI/UX Improvement
-- [ ] 🔥 Hotfix
-- [ ] 🛡️ Security Patch
-- [ ] 🏗️ Refactoring
+---
 
-## 📖 Description
-<!-- Describe the purpose of the changes, reasoning, and relevant context -->
-Fixes #[Issue Number]
+## 📝 Description of Changes
+<!-- Provide a clear and concise summary of the changes made. -->  
 
-## 🛠️ How Has This Been Tested?
-- [ ] Unit Tests
-- [ ] Integration Tests
-- [ ] Manual Testing
-- [ ] Performance Tests
+---
 
-## ⚡ Impact
-<!-- Discuss effects on performance, dependencies, or behavior changes -->
+## ✅ Pre-Review Checklist
+- [ ] **Task Groomed & JIRA Documentation Attached**
 
-## 📎 Related Issues/Tickets
-<!-- Link related issues, e.g., Fixes #123 -->
+### 🔍 **Code Quality & Testing**
+- [ ] Unit Tests cover all relevant scenarios
+- [ ] **Sonar Reliability Score:** A
+- [ ] **E2E Execution Report Attached in PR**
+
+### 🚀 **Pre-Deployment Validation**
+- [ ] Feature validated in a **pre-prod environment**
+- [ ] Performance & regression test results reviewed
+
+### 📚 **Documentation & Compliance**
+- [ ] API contracts, technical documentation, and SOPs updated
+
+### 🚀 **Release Readiness**
+- [ ] Release notes updated for features, changes, or fixes
+- [ ] User-facing documentation updated (if applicable)
+
+---
 
 ## 📜 Additional Information
-<!-- Add any extra details, screenshots, or logs if needed -->
-
-## ✅ Checklist
-- [ ] Code follows the project's coding guidelines.
-- [ ] Changes are well-documented.
-- [ ] No new warnings or errors introduced.
-- [ ] Relevant tests have been added and pass.
-
+<!-- Include extra details, logs, or screenshots if needed. -->  
